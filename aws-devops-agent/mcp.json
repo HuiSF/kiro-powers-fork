@@ -1,9 +1,15 @@
 {
   "mcpServers": {
+    "aws-devops-agent": {
+      "url": "https://connect.aidevops.${DEVOPS_AGENT_REGION}.api.aws/mcp",
+      "headers": {
+        "Authorization": "Bearer ${DEVOPS_AGENT_TOKEN}"
+      },
+      "timeout": 120000
+    },
     "aws-mcp": {
       "command": "uvx",
       "timeout": 100000,
-      "transport": "stdio",
       "args": [
         "mcp-proxy-for-aws@latest",
         "https://aws-mcp.us-east-1.api.aws/mcp",
